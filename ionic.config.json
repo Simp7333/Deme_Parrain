@@ -1,0 +1,7 @@
+{
+  "name": "deme-parrain",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
