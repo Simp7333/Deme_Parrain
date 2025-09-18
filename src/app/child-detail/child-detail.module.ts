@@ -15,6 +15,5 @@ import { ChildDetailPage } from './child-detail.page';
     IonicModule,
     ChildDetailPageRoutingModule
   ],
-  declarations: [ChildDetailPage]
 })
 export class ChildDetailPageModule {}

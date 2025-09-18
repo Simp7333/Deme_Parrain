@@ -15,6 +15,5 @@ import { ReportsPage } from './reports.page';
     IonicModule,
     ReportsPageRoutingModule
   ],
-  declarations: [ReportsPage]
 })
 export class ReportsPageModule {}

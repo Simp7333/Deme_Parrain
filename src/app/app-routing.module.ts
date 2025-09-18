@@ -1,54 +1,31 @@
+// src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardPage } from './dashboard/dashboard.page';
+import { ChildDetailPage } from './child-detail/child-detail.page';
+import { LoginPage } from './login/login.page';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadComponent: () =>
+      import('./dashboard/dashboard.page').then(m => m.DashboardPage)
   },
   {
     path: 'child-detail',
-    loadChildren: () => import('./child-detail/child-detail.module').then( m => m.ChildDetailPageModule)
+    loadComponent: () =>
+      import('./child-detail/child-detail.page').then(m => m.ChildDetailPage)
   },
   {
-    path: 'payment',
-    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
-  },
-  {
-    path: 'reports',
-    loadChildren: () => import('./reports/reports.module').then( m => m.ReportsPageModule)
-  },
-  {
-    path: 'notifications',
-    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.page').then(m => m.LoginPage)
   },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

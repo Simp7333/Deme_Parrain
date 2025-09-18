@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+// child-detail.page.ts
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-child-detail',
+  standalone: true,
+  imports: [IonicModule], // <-- important
   templateUrl: './child-detail.page.html',
-  styleUrls: ['./child-detail.page.scss'],
 })
-export class ChildDetailPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class ChildDetailPage {}

@@ -15,6 +15,5 @@ import { PaymentPage } from './payment.page';
     IonicModule,
     PaymentPageRoutingModule
   ],
-  declarations: [PaymentPage]
 })
 export class PaymentPageModule {}
