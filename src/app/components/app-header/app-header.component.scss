@@ -1,0 +1,38 @@
+ion-toolbar.header-toolbar {
+	--background: #ffffff;
+	--border: 1px solid #060606ff;
+	min-height: 72px;
+	display: flex;
+	align-items: center;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.header-logo {
+	width: 170px;
+	height: 75px;
+	object-fit: contain;
+	margin-left: 8px;
+}
+
+.header-icons {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	margin-right: 8px;
+}
+
+.header-icon-btn {
+	--background: transparent;
+	--box-shadow: none;
+	color: #064232;
+	font-size: 15px;
+	min-width: 28px;
+	height: 28px;
+	padding: 0;
+}

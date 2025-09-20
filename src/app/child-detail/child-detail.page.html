@@ -1,18 +1,74 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Child Detail</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Child Detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div style="padding: 16px;">
-    <!-- Contenu de détail de l’enfant -->
-    Détails de l’enfant ici.
+<ion-content class="ion-padding">
+  <ion-card class="profile-container">
+    <!-- Profile Header -->
+    <ion-card-header class="profile-header">
+  <div class="profile-header-row">
+    <div class="profile-header-content">
+      <ion-card-title>Amadou Dembélé</ion-card-title>
+      <div class="profile-row">
+        <!-- Photo à gauche -->
+        <img class="child-photo" src="assets/img/default-profile.png" alt="Photo de profil" />
+        
+        <!-- Infos à droite -->
+        <div class="profile-info">
+          <div class="info-item">
+            <span class="info-label">Genre :</span>
+            <span class="info-value">Homme</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Date de naissance :</span>
+            <span class="info-value">7/11/2007</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Âge :</span>
+            <span class="info-value">17 ans</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Niveau scolaire :</span>
+            <span class="info-value">Second cycle</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Besoins :</span>
+            <span class="info-value">Fournitures scolaires, cantine</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</ion-card-header>
+
+    <!-- Association Section -->
+    <ion-card-content class="association-section">
+      <div class="asso">
+        <img class="child-photo" src="assets/img/default-profile.png" alt="Photo de profil" />
+        <h2>Association Alp</h2>
+      </div>
+      <p>Notre association soutient la scolarité des enfants grâce au parrainage. Ensemble, nous offrons éducation, fournitures et espoir pour un avenir meilleur.</p>
+    </ion-card-content>
+
+    <!-- Dream Section -->
+    <ion-card-content class="dream-section">
+      <h3>Bonjour</h3>
+      <p>Je rêve d'aller à l'école chaque jour et d'apprendre pour construire un meilleur avenir. Ma famille n'a pas toujours les moyens de me donner ce dont j'ai besoin, mais avec un parrain ou une marraine, j'aurai la chance de grandir, d'étudier et de poursuivre mes rêves.</p>
+    </ion-card-content>
+
+    <!-- Help Section -->
+    <ion-card-content class="help-section">
+      <h3><ion-icon name="heart" class="section-icon"></ion-icon> Pourquoi aider Amadou</h3>
+      <p>Aider cet enfant, c'est lui donner bien plus qu'un soutien matériel. C'est lui offrir la chance d'aller à l'école, de se sentir en sécurité et d'avoir l'espoir d'un avenir meilleur. Comme tous les enfants, il a des rêves et beaucoup de courage, mais il lui manque les moyens pour avancer. Avec votre aide, il pourra grandir dans la dignité, sourire un peu plus chaque jour et croire que tout est possible.</p>
+    </ion-card-content>
+
+    <!-- Share Section -->
+    <ion-card-content class="share-section">
+      <ion-button class="share-btn" disabled>
+        <ion-icon name="share-social" slot="start"></ion-icon>
+        Partager le profil
+      </ion-button>
+    </ion-card-content>
+
+    <!-- Sponsored Section -->
+    <ion-card-content class="sponsored-section">
+      <button class="parraine-btn" type="button">Parrainé.e</button> 
+    </ion-card-content>
+  </ion-card>
 </ion-content>

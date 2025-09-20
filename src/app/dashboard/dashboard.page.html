@@ -1,18 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
+<ion-content class="dashboard-content">
+  <!-- Bannière bienvenue -->
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Bienvenue dans votre espace parrain !</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Merci de rejoindre l’aventure du parrainage ! Votre soutien ouvre à un enfant la porte vers un avenir meilleur.
+    </ion-card-content>
+  </ion-card>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Cartes sponsor -->
+  <div class="sponsorship-cards">
+    <ion-card *ngFor="let item of sponsorshipData">
+      <ion-card-content>
+        <div [ngStyle]="{'background-color': item.iconBg}" class="stat-icon">
+          <img [src]="item.icon" alt="{{item.label}}" />
+        </div>
+        <div>
+          <p>{{item.label}}</p>
+          <h3>{{item.value}}</h3>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
-  <div style="padding: 16px;">
-    <!-- Contenu de ton dashboard -->
-    Bienvenue sur le Dashboard !
+  <!-- Enfants à parrainer -->
+  <div class="children-section">
+    <h3>Ces enfants ont besoin de vous</h3>
+    <children-slider [children]="childrenData"></children-slider>
+  </div>
+  
+
+  <!-- Bouton inviter un ami -->
+  <ion-button class="invite-button" expand="block" fill="solid">
+    Invitez un ami à parrainer
+  </ion-button>
+
+  <!-- Activités récentes -->
+  <div class="activities-section">
+    <h4>Activités récentes</h4>
+    <ion-list class="activities-list">
+      <ion-item *ngFor="let act of recentActivitiesData" lines="none" class="activity-item">
+        <ion-icon [name]="act.icon" slot="start" class="activity-icon"></ion-icon>
+        <ion-label>
+          <h3>{{act.title}}</h3>
+          <p *ngIf="act.date">{{act.date}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
+
+<app-footer></app-footer>

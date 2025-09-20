@@ -1,0 +1,30 @@
+.children-slider {
+  height: 160px;
+  margin-bottom: 16px;
+}
+
+.child-card {
+  width: auto !important;
+  height: 150px !important;
+  border-radius: 8px;
+  position: relative;
+}
+
+.child-card ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.child-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 0;
+}

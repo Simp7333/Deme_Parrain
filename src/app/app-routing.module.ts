@@ -1,12 +1,15 @@
 // src/app/app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardPage } from './dashboard/dashboard.page';
-import { ChildDetailPage } from './child-detail/child-detail.page';
-import { LoginPage } from './login/login.page';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'child-detail', pathMatch: 'full' },
+  {
+    path: 'parrainnage',
+    loadComponent: () =>
+      import('./parrainage/parrainage.page').then(m => m.ParrainagePage)
+  },
   {
     path: 'dashboard',
     loadComponent: () =>
@@ -21,6 +24,10 @@ const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('./login/login.page').then(m => m.LoginPage)
+  },
+  {
+    path: 'parrainage',
+    loadChildren: () => import('./parrainage/parrainage.module').then( m => m.ParrainagePageModule)
   },
 ];
 

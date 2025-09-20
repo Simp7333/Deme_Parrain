@@ -31,7 +31,10 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/swiper/swiper-bundle.css"
+            ],
             "scripts": []
           },
           "configurations": {
