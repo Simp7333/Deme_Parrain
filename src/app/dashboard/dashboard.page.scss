@@ -1,22 +1,45 @@
 .sponsorship-cards {
-  /* Scrollbar stylée uniquement pour cette section */
-  &::-webkit-scrollbar {
-    height: 8px;
-    background: #e6f9f0;
-    border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  ion-card {
+    min-width: 160px;
+    flex: 1 1 160px;
+    border-radius: 5px;
+
+    ion-card-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .stat-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      p {
+        font-size: 10px;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 14px;
+        margin: 0;
+        font-weight: 600;
+      }
+    }
   }
-  &::-webkit-scrollbar-thumb {
-    background: #68b984;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px #68b98433;
-    transition: background 0.2s;
-  }
-  &:hover::-webkit-scrollbar-thumb {
-    background: #08cb00;
-  }
-  /* Firefox */
-  scrollbar-color: #68b984 #e6f9f0;
-  scrollbar-width: thin;
 }
 app-footer, ion-footer {
   position: fixed;
@@ -110,28 +133,38 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
   }
 }
 
-/* Children Slider */
+/* Section */
 .children-section {
   align-items: center;
   gap: 8px;
-  align-items: center;
   margin: 10px;
   border-radius: 10px;
   margin-bottom: 16px;
-  background-color: #CFFFE2;
+  background-color: #cfffe2;
   padding: 8px;
 }
+
+.children-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #064232;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Slider horizontal */
 .children-slider {
-  height: 160px;
-  margin-bottom: 16px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
   display: flex;
   flex-direction: row;
-  gap: 4px;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
+
+/* Scrollbar style */
 .children-slider::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
@@ -141,30 +174,38 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
   scrollbar-width: none !important; /* Firefox */
   -ms-overflow-style: none !important; /* IE/Edge */
 }
-.children-slider .child-card {
+
+/* Cards enfants */
+.child-card {
   flex: 0 0 auto;
-  width: 140px !important;
-  height: 170px !important;
+  width: 140px;
+  height: 170px;
   border-radius: 10px;
   position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
-.children-slider .child-card ion-img {
+
+.child-card ion-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.children-slider .child-card .child-name {
+
+/* Nom de l’enfant */
+.child-name {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.4);
-  color: $text-light;
+  background: rgba(216, 214, 214, 0.776);
+  color: #222;
   text-align: center;
   font-weight: bold;
   font-size: 12px;
   padding: 4px 0;
 }
+
 .activities-section {
 
   align-items: center;

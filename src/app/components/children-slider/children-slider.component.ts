@@ -8,18 +8,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [IonicModule, SwiperModule, CommonModule],
   template: `
-    <swiper
-      [slidesPerView]="2.2"
-      [spaceBetween]="8"
-      class="children-slider"
-    >
-      <ng-template swiperSlide *ngFor="let child of children">
-        <ion-card class="child-card">
-          <ion-img [src]="child.image"></ion-img>
-          <ion-card-content class="child-name">{{child.name}}</ion-card-content>
-        </ion-card>
-      </ng-template>
-    </swiper>
+    <div class="children-slider">
+  <ion-card class="child-card" *ngFor="let child of children">
+    <ion-img [src]="child.image"></ion-img>
+    <ion-card-content class="child-name">{{child.name}}</ion-card-content>
+  </ion-card>
+</div>
   `,
   styleUrls: ['./children-slider.component.scss']
 })

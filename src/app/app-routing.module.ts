@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'dashboard',
     loadComponent: () =>
@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('./login/login.page').then(m => m.LoginPage)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'parrainage',

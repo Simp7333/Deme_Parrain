@@ -1,0 +1,17 @@
+<div class="form-container">
+  <h2 class="form-title">{{ formTitle }}</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm.emit()">
+    <ng-container *ngFor="let field of fields">
+      <ion-item>
+        <ion-input *ngIf="field.type === 'input'" [type]="field.inputType || 'text'" [placeholder]="field.placeholder" [formControlName]="field.formControlName"></ion-input>
+      </ion-item>
+      <ion-text color="danger" *ngIf="isInvalid(field.formControlName)">
+        {{ errorMessages[field.formControlName] }}
+      </ion-text>
+    </ng-container>
+    <ion-button expand="block" class="register-btn" type="submit">
+      {{ submitLabel }}
+    </ion-button>
+  </form>
+  <ng-content></ng-content>
+</div>

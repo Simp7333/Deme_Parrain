@@ -1,8 +1,105 @@
 ion-content {
-  background: #f8fff8;
+  --padding-bottom: 64px;
 }
-h2 {
+/* Variables */
+$primary-color: #68b984;
+$secondary-color: #cfffe2;
+$text-light: #ffffff;
+$text-dark: #1f3426;
+$orange-color: #FF9500; /* Pour le bouton inviter */
+
+
+.kpi-cards::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  background: transparent !important;
+}
+
+.sponsorship-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  ion-card {
+    min-width: 160px;
+    flex: 1 1 160px;
+    border-radius: 5px;
+
+    ion-card-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .stat-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      p {
+        font-size: 10px;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 14px;
+        margin: 0;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// .table-header {
+//   font-weight: bold;
+//   background: #f9f9f9;
+//   color: #064232;
+//   border-bottom: 1px solid #e6e6e6;
+// }
+
+ion-row {
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.impact-summary {
+  background: #e6f9ef;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: bold;
   color: #064232;
-  margin-top: 24px;
-  text-align: center;
+}
+.impact-summary span {
+  display: block;
+  font-size: 16px;
+  color: #08cb00;
+}
+
+.card-ion{
+  background-color: #cfffe27a;
+}
+
+app-footer, ion-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100vw;
+  max-width: 100vw;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }

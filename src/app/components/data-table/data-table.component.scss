@@ -1,0 +1,26 @@
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #cfffe27a;
+
+}
+.data-table th {
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.data-table td {
+  background-color: #D9D9D9;
+  gap: 10px;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 10px solid #cfffe2d0;
+  box-sizing: border-box;
+  border-radius: 1Opx
+  ;
+}
+

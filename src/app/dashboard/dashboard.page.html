@@ -28,8 +28,14 @@
   <!-- Enfants à parrainer -->
   <div class="children-section">
     <h3>Ces enfants ont besoin de vous</h3>
-    <children-slider [children]="childrenData"></children-slider>
+    <div class="children-slider">
+      <ion-card class="child-card" *ngFor="let child of childrenData">
+        <ion-img [src]="child.image"></ion-img>
+        <ion-card-content class="child-name">{{ child.name }}</ion-card-content>
+      </ion-card>
+    </div>
   </div>
+
   
 
   <!-- Bouton inviter un ami -->

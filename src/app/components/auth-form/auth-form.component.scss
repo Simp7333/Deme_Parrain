@@ -1,0 +1,32 @@
+.form-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d3b2e;
+  margin-bottom: 20px;
+}
+ion-item {
+  --border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+}
+.register-btn {
+  margin-top: 20px;
+  background-color: #1aa331;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.form-container ion-text[color='danger'] {
+  color: #e53935 !important;
+}

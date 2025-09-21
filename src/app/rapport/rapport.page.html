@@ -1,9 +1,60 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Rapport</ion-title>
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/logo.png" alt="Daimai" style="height: 28px;" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button fill="clear"><ion-icon name="settings-outline"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
-<ion-content class="ion-padding">
-  <h2>Bienvenue sur la page Rapport</h2>
-  <p>Contenu à venir...</p>
+</ion-header> -->
+
+<app-header></app-header>
+<ion-content fullscreen>
+
+  <!-- KPI Cards -->
+  <div class="sponsorship-cards kpi-cards">
+    <ion-card *ngFor="let item of kpis">
+      <ion-card-content>
+        <div class="stat-icon kpi-bg">
+          <ion-icon [name]="item.icon"></ion-icon>
+        </div>
+        <div>
+          <p>{{item.label}}</p>
+          <h3>{{item.value}}</h3>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Evolution mensuelle -->
+  <ion-card class="card-ion">
+    <ion-card-header>
+      <ion-card-title>Évolution mensuelle</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <app-data-table [columns]="['mois', 'contribue', 'depense']" [data]="evolution"></app-data-table>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Impact summary -->
+  <div class="impact-summary">
+    <div *ngFor="let item of impact">
+      <span>{{ item.value }}</span>
+      {{ item.label }}
+    </div>
+  </div>
+
+  <!-- Répartition frais scolaires -->
+  <ion-card  class="card-ion">
+    <ion-card-header>
+      <ion-card-title>Répartition des frais scolaires</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <app-data-table [columns]="['item', 'montant', 'part']" [data]="repartition"></app-data-table>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+<app-footer></app-footer>
