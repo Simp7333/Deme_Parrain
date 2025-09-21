@@ -13,11 +13,7 @@
           <ion-select-option value="Masculin">Masculin</ion-select-option>
           <ion-select-option value="Féminin">Féminin</ion-select-option>
         </ion-select>
-        <div class="absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5 3L7.5 6L4.5 9" stroke="#1F3426" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+
       </div>
 
       <!-- Age Filter -->
@@ -28,11 +24,7 @@
           <ion-select-option value="10-15">10-15</ion-select-option>
           <ion-select-option value="16-20">16-20</ion-select-option>
         </ion-select>
-        <div class="absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5 3L7.5 6L4.5 9" stroke="#1F3426" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+
       </div>
 
       <!-- Pays Filter -->
@@ -43,11 +35,7 @@
           <ion-select-option value="Sénégal">Sénégal</ion-select-option>
           <ion-select-option value="Burkina Faso">Burkina Faso</ion-select-option>
         </ion-select>
-        <div class="absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5 3L7.5 6L4.5 9" stroke="#1F3426" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+
       </div>
 
       <!-- Mes filleuls Filter -->
@@ -58,25 +46,22 @@
           <ion-select-option value="1-3">1-3</ion-select-option>
           <ion-select-option value="4-6">4-6</ion-select-option>
         </ion-select>
-        <div class="absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5 3L7.5 6L4.5 9" stroke="#1F3426" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+
       </div>
     </div>
 
-    <ion-button expand="block" class="h-[47px] bg-[#08cb00] rounded-[5px] font-semibold text-[#0a3209] text-xl hover:bg-[#07b500]" (click)="onSearch()">Rechercher</ion-button>
+    <ion-button expand="block" class="button" (click)="onSearch()">Rechercher</ion-button>
   </section>
 
   <!-- Profiles Grid -->
   <section aria-label="Profils disponibles">
     <div class="children-grid">
-      <ion-card *ngFor="let child of childrenData" class="child-card">
+      <ion-card *ngFor="let child of filteredChildren" class="child-card">
         <ion-img [src]="child.image" alt="Photo de {{ child.name }}" class="profile-img"></ion-img>
         <ion-card-title class="child-name">
           {{ child.name }}
         </ion-card-title>
+       
       </ion-card>
     </div>
   </section>

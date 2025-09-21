@@ -1,13 +1,73 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>payment</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="container">
+    <ion-header class="header">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="title">Confirmation de paiement</ion-title>
+    </ion-header>
+      <p class="subtitle">Parrainer un enfant</p>
+    <div class="content-wrapper">
+      <!-- Child Card -->
+      <ion-card class="child-card">
+        <ion-card-content>
+          <h2 class="child-name">Amadou Dembélé</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="">
+                <p>Homme | 7ans | Fournitures scolaires, cantine</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <p class="amount">30.000 fcfa <span>(Par mois)</span></p>
+        </ion-card-content>
+      </ion-card>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">payment</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <!-- Payment Methods -->
+      <ion-card class="payment-methods">
+        <ion-card-content>
+          <h2 class="section-title">Choisir la méthode de paiement</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="">
+                <ion-button expand="block" fill="outline" class="method-btn" [color]="paymentType==='card' ? 'success' : ''" (click)="setPaymentType('card')">
+                  <ion-icon name="card-outline" slot="start"></ion-icon>
+                  Carte bancaire
+                </ion-button>
+              </ion-col>
+              <ion-col size="">
+                <ion-button expand="block" fill="outline" class="method-btn" [color]="paymentType==='mobilemoney' ? 'success' : ''" (click)="setPaymentType('mobilemoney')">
+                  <ion-icon name="phone-portrait-outline" slot="start"></ion-icon>
+                  Mobile money
+                </ion-button>
+              </ion-col>
+              <ion-col size="">
+                <ion-button expand="block" fill="outline" class="method-btn" [color]="paymentType==='paypal' ? 'success' : ''" (click)="setPaymentType('paypal')">
+                  <ion-icon name="logo-paypal" slot="start"></ion-icon>
+                  Paypal
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Payment Details -->
+      <app-payment-details
+        [amount]="'30.000 fcfa'"
+        [processingFee]="'0 fcfa'"
+        [total]="'30.000 fcfa'"
+        [cardShape]="'default'"
+        [secureText]="'Paiement 100% sécurisé'"
+        [showCardFields]="true"
+        [paymentType]="paymentType">
+      </app-payment-details>
+
+
+      <ion-button expand="block" class="confirm-button" (click)="confirmPayment()">Confirmer le paiement</ion-button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <app-footer></app-footer> 
+  </div>
 </ion-content>

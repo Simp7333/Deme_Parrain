@@ -4,12 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'child-detail', pathMatch: 'full' },
-  {
-    path: 'parrainnage',
-    loadComponent: () =>
-      import('./parrainage/parrainage.page').then(m => m.ParrainagePage)
-  },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'dashboard',
     loadComponent: () =>
@@ -28,6 +23,14 @@ const routes: Routes = [
   {
     path: 'parrainage',
     loadChildren: () => import('./parrainage/parrainage.module').then( m => m.ParrainagePageModule)
+  },
+  {
+    path: 'paiement',
+    loadComponent: () => import('./payment/payment.page').then(m => m.PaymentPage)
+  },
+  {
+    path: 'rapport',
+    loadComponent: () => import('./rapport/rapport.page').then(m => m.RapportPage)
   },
 ];
 

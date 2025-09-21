@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
+  imports: [BrowserModule],
 })
 export class DashboardPage implements OnInit {
 

@@ -1,3 +1,13 @@
+/* Fallback pour navigateurs anciens : masquer la scrollbar en la rendant invisible */
+* {
+	scrollbar-color: transparent transparent;
+}
+*::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -35,3 +45,14 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Masquer toutes les scrollbars (cross-browser) */
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+	display: none;
+}
+/* Firefox */
+* {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}

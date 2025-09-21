@@ -44,14 +44,14 @@ export class DashboardPage {
   ];
   childrenData = [
     { name: 'Awa', image: 'assets/img/ebengroup.webp' },
-    { name: 'Moussa', image: 'assets/img/ebengroup.webp' },
-    { name: 'Fatou', image: 'assets/img/ebengroup.webp' },
+    { name: 'Moussa', image: 'assets/img/happ.webp' },
+    { name: 'Fatou', image: 'assets/img/Teaching.webp' },
     { name: 'Fatou', image: 'assets/img/ebengroup.webp' },
     { name: 'Fatou', image: 'assets/img/ebengroup.webp' },
   ];
   recentActivitiesData = [
-    { title: 'Don mensuel', amount: '40€', date: '01/09/2025', icon: 'card' },
-    { title: 'Nouveau parrainage', count: 1, date: '15/08/2025', icon: 'person-add' },
-    { title: 'Don exceptionnel', amount: '100€', date: '10/08/2025', icon: 'gift' },
+    { title: 'nouveaux Bulletins recus', nbre: '+3', date: '01/09/2025', icon: 'ellipse' },
+    { title: 'Paiement menseuel effectué', nbre: '75 000 fcfa', date: '15/08/2025', icon: 'ellipse' },
+    { title: 'Photos activités partage', amount: '+3', date: '10/08/2025', icon: 'ellipse' },
   ];
 }

@@ -1,0 +1,79 @@
+<ion-card class="payment-details" [ngClass]="cardShape">
+  <ion-card-content>
+    <h2 class="section-title">Détails du paiement</h2>
+
+
+  <ng-container *ngIf="showCardForm">
+      <!-- Numéro de carte -->
+      <div class="form-group">
+        <ion-label>Numéro de carte</ion-label>
+        <ion-input class="styled-input" placeholder="1234 5678 9124"></ion-input>
+      </div>
+
+      <!-- Expiration + CVV -->
+      <div class="input-row">
+        <div class="form-group">
+          <ion-label>Date d'expiration</ion-label>
+          <ion-input class="styled-input" placeholder="MM/AA"></ion-input>
+        </div>
+        <div class="form-group">
+          <ion-label>CVV</ion-label>
+          <ion-input class="styled-input" placeholder="CVV"></ion-input>
+        </div>
+      </div>
+
+      <!-- Nom titulaire -->
+      <div class="form-group">
+        <ion-label>Nom du titulaire</ion-label>
+        <ion-input class="styled-input" placeholder="Assata Coulibaly"></ion-input>
+      </div>
+    </ng-container>
+
+  <ng-container *ngIf="showMobileMoneyForm">
+    <!-- Opérateur -->
+    <div class="form-group">
+      <ion-label>Choisir l’opérateur</ion-label>
+      <ion-input class="styled-input" [value]="operator" readonly></ion-input>
+    </div>
+    <!-- Numéro de téléphone -->
+    <div class="form-group">
+      <ion-label>Votre numéro de téléphone</ion-label>
+      <div class="phone-row">
+        <ion-input class="styled-input phone-prefix" [value]="phonePrefix" readonly></ion-input>
+        <ion-input class="styled-input" placeholder="Numéro" [(ngModel)]="phoneNumber"></ion-input>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showPaypalForm">
+    <div class="paypal-block">
+      <ion-icon name="logo-paypal" class="paypal-logo"></ion-icon>
+      <div class="paypal-message">
+        Vous serez redirigé vers Paypal pour finaliser votre paiement en toute sécurité
+      </div>
+    </div>
+  </ng-container>
+
+    <!-- Badge sécurisé -->
+    <div class="secure-badge">
+      <ion-icon name="shield-checkmark"></ion-icon>
+      <span>{{secureText}}</span>
+    </div>
+
+    <!-- Montant -->
+    <div class="amount-details">
+      <ion-item lines="none" class="amount-row">
+        <ion-label>Montant</ion-label>
+        <ion-label slot="end">{{amount}}</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="amount-row">
+        <ion-label>Frais de traitement</ion-label>
+        <ion-label slot="end">{{processingFee}}</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="amount-row total">
+        <ion-label>Total</ion-label>
+        <ion-label slot="end" class="total-amount">{{total}}</ion-label>
+      </ion-item>
+    </div>
+  </ion-card-content>
+</ion-card>

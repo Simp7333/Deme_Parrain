@@ -39,13 +39,15 @@
 
   <!-- Activités récentes -->
   <div class="activities-section">
+    
     <h4>Activités récentes</h4>
     <ion-list class="activities-list">
       <ion-item *ngFor="let act of recentActivitiesData" lines="none" class="activity-item">
         <ion-icon [name]="act.icon" slot="start" class="activity-icon"></ion-icon>
         <ion-label>
           <h3>{{act.title}}</h3>
-          <p *ngIf="act.date">{{act.date}}</p>
+          <p *ngIf="act.date"><small *ngIf="act.nbre">{{act.nbre}}</small>{{act.date}}</p>
+          
         </ion-label>
       </ion-item>
     </ion-list>

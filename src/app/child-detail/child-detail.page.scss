@@ -1,17 +1,27 @@
+app-footer, ion-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100vw;
+  max-width: 100vw;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
 .parraine-btn {
   display: block;
   margin: 0 auto 24px auto;
-  background: linear-gradient(90deg, #27ae60 60%, #219150 100%);
+  background-color:#08CB00 ; 
   color: #fff;
   font-size: 20px;
   font-weight: 700;
   border: none;
-  border-radius: 32px;
+  border-radius: 5px;
+  width: 100%;
   padding: 14px 48px;
   box-shadow: 0 4px 16px rgba(39, 174, 96, 0.18);
   text-align: center;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .parraine-btn:hover {
   background: linear-gradient(90deg, #219150 60%, #27ae60 100%);
@@ -166,6 +176,7 @@
 }
 
 .profile-header-content {
+  
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
@@ -267,10 +278,12 @@
     right: 10px;
   }
   .info-label {
+    color: #08CB00;
     min-width: 90px;
     font-size: 13px;
   }
   .info-value {
+    
     font-size: 13px;
   }
   .association-section h2 {
@@ -335,7 +348,7 @@ ion-content {
   overflow: hidden;
 }
 .profile-header {
-  background-color:#08cb00 !important;
+  background-color:#064232;
   padding: 20px;
 }
 
@@ -383,7 +396,6 @@ ion-content {
 
 .info-item {
   font-size: 16px;
-  color: #2c3e50;
 }
 
 .info-label {
@@ -394,8 +406,8 @@ ion-content {
 
 .info-value {
   font-weight: 500;
-  color: #34495e;
-  font-size: 13.5px;
+  color: #FFFFFF;
+  font-size: 10.5px;
 }
 
 @media (max-width: 700px) {
@@ -421,7 +433,7 @@ ion-content {
 
 .association-section {
   
-  background-color: #eceeef;
+  background-color: #D9D9D9;
   border-bottom: 1px solid #d6eaf8;
   position: relative;
 }
@@ -449,7 +461,7 @@ ion-content {
 }
 .association-section h2 {
   text-align: justify;
-  color: #2c3e50;
+  color: #1F3426;
   font-size: 24px;
   margin-bottom: 18px;
   font-weight: 650;
@@ -459,7 +471,7 @@ ion-content {
 .association-section p {
   margin-top: -5%;
   margin-left: 25%;
-  color: #444;
+  color: #1F3426;
   line-height: 1.05;
   margin-bottom: 10px;
   border-radius: 0 8px 8px 0;
@@ -519,8 +531,8 @@ ion-content {
 
 .help-section p {
   width: 100%;
-  background-color: #cfffe2;
-  color: #444;
+  background-color: #68B984;
+  color:#1F3426;
   line-height: 1.05;
   margin-bottom: 10px;
   border-radius: 0 8px 8px 0;
@@ -530,7 +542,7 @@ ion-content {
 
 .share-btn {
   --background: transparent !important;
-  --color: #ff9800 !important;
+  --color: #FF9A00 !important;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -544,6 +556,7 @@ ion-content {
 }
 
 .sponsored-section {
+  
   width: 100%;
   background: linear-gradient(to right, #f8f9fa, #ffffff);
 }

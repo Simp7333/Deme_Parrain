@@ -1,0 +1,93 @@
+/* Paypal block */
+.paypal-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 18px 0 10px 0;
+}
+.paypal-logo {
+  font-size: 48px;
+  color: #003087;
+  margin-bottom: 10px;
+}
+.paypal-message {
+  text-align: center;
+  color: #222;
+  font-weight: 600;
+  font-size: 15px;
+}
+/* Message Paypal */
+.paypal-message {
+  text-align: center;
+  color: #222;
+  font-weight: 600;
+}
+/* Ligne pour le champ téléphone mobile money */
+.phone-row {
+  display: flex;
+  gap: 8px;
+}
+.phone-prefix {
+  max-width: 70px;
+}
+/* Style de base, à personnaliser selon cardShape */
+.payment-details {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e6f9f0;
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .form-group {
+    margin-bottom: 12px;
+    ion-label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .styled-input {
+      border-radius: 8px;
+      background: #f7f7f7;
+      padding: 8px 12px;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+  }
+  .input-row {
+    display: flex;
+    gap: 12px;
+  }
+  .secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #08cb00;
+    font-weight: 600;
+    margin: 12px 0;
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+  .amount-details {
+    margin-top: 10px;
+    .amount-row {
+      font-size: 15px;
+      &.total {
+        font-weight: bold;
+        .total-amount {
+          color: #08cb00;
+        }
+      }
+    }
+  }
+}
+
+/* Exemples de formes différentes */
+.payment-details.rounded {
+  border-radius: 24px;
+}
+.payment-details.flat {
+  border-radius: 0;
+  box-shadow: none;
+}

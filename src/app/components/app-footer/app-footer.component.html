@@ -1,3 +1,17 @@
-<p>
-  app-footer works!
-</p>
+<ion-footer class="bottom-nav">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ng-container *ngFor="let item of navigationItems">
+          <ion-col size="2.4" class="ion-text-center">
+            <a [routerLink]="['/' + item.id]" routerLinkActive="active" class="nav-item">
+              <ion-icon [name]="item.icon"></ion-icon><br>
+              {{ item.label }}
+            </a>
+          </ion-col>
+
+        </ng-container>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

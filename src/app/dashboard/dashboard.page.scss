@@ -1,4 +1,23 @@
-// Footer personnalisé
+.sponsorship-cards {
+  /* Scrollbar stylée uniquement pour cette section */
+  &::-webkit-scrollbar {
+    height: 8px;
+    background: #e6f9f0;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #68b984;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #68b98433;
+    transition: background 0.2s;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: #08cb00;
+  }
+  /* Firefox */
+  scrollbar-color: #68b984 #e6f9f0;
+  scrollbar-width: thin;
+}
 app-footer, ion-footer {
   position: fixed;
   left: 0;
@@ -6,49 +25,11 @@ app-footer, ion-footer {
   bottom: 0;
   z-index: 100;
   width: 100vw;
-  background: #064232;
+  max-width: 100vw;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
-app-footer ion-toolbar, ion-footer ion-toolbar {
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 56px;
-}
-app-footer ion-buttons, ion-footer ion-buttons {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-app-footer ion-button, ion-footer ion-button {
-  flex-direction: column;
-  align-items: center;
-  color: #111 !important;
-  font-size: 12px;
-  background: none;
-  border-radius: 8px;
-  text-align: center;
-  min-width: 60px;
-}
-app-footer ion-button.active, ion-footer ion-button.active {
-  color: #68b984 !important;
-  font-weight: bold;
-}
-app-footer ion-button.active ion-icon,
-ion-footer ion-button.active ion-icon {
-  color: #68b984;
-}
-app-footer ion-icon, ion-footer ion-icon {
-  font-size: 28px;
-  margin-bottom: 2px;
-  color: #111 !important;
-  transition: color 0.2s;
-}
-app-footer ion-button.active span,
-ion-footer ion-button.active span {
-  color: #68b984 !important;
-}
+// Footer personnalisé
+
 ion-content {
   --padding-bottom: 64px;
 }
@@ -71,23 +52,29 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
   margin-bottom: 16px;
 
   ion-card-title {
+    color: #FFFF;
     font-weight: 800;
     font-size: 16px;
   }
 
   ion-card-content {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
   }
 }
 
 /* Sponsorship Cards */
 .sponsorship-cards {
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 12px;
   margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
 
   ion-card {
-    flex: 1;
+    min-width: 160px;
+    flex: 0 0 auto;
     border-radius: 5px;
 
     ion-card-content {
@@ -185,7 +172,6 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
   margin: 10px;
   border-radius: 10px;
   margin-bottom: 16px;
-  background-color: #CFFFE2;
   padding: 8px;
   h2 {
     font-size: 14px;
@@ -195,17 +181,21 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
   }
   background-color: #CFFFE2;
 }
-
+.activities-list{
+  background-color: #CFFFE2;
+}
 /* Bouton Inviter */
 .invite-button {
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   --background:#FF9A00;
   --color: $text-light;
-  margin: 16px 0;
+  margin-bottom: 16px;
+  padding: 8px;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 800;
   height: 44px;
+  color: $text-light;
 }
 
 /* Recent Activities */
@@ -233,48 +223,8 @@ $orange-color: #FF9500; /* Pour le bouton inviter */
       margin: 0;
       color: #666;
     }
+    small{
+      margin-right: 15px;
+    }
   }
-}
-app-footer, ion-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  width: 100vw;
-}
-
-/* Assure un padding pour éviter que le contenu passe sous le footer */
-ion-content {
-  --padding-bottom: 60px;
-}
-
-/* Centrage du toolbar */
-ion-footer ion-toolbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #064232; /* ta couleur verte */
-}
-
-/* Boutons en colonne (icône au-dessus, texte en dessous) */
-ion-footer ion-button {
-  --color: #ffffff;
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 60px; /* pour que ce soit bien espacé */
-}
-
-ion-footer ion-button ion-icon {
-  font-size: 18px;
-  margin-bottom: 2px; /* petit espace entre icône et texte */
-}
-
-/* Bouton actif en vert clair */
-ion-footer ion-button.active {
-  color: #68b984;
-  font-weight: bold;
 }
